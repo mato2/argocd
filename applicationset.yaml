@@ -16,7 +16,7 @@ spec:
      source:
        helm:
          values: |
-            replicaCount: 3
+            replicaCount: 2
               
          releaseName: nginx
        repoURL: https://github.com/mato2/helm-charts.git
