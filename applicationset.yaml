@@ -8,9 +8,6 @@ spec:
      elements:
      - cluster: dev
        url: https://kubernetes.default.svc
-       values:
-         override: |
-            replicaCount: 2
  template:
    metadata:
      name: '{{cluster}}-nginx-server'
@@ -18,8 +15,9 @@ spec:
      project: default
      source:
        helm:
-         values: | 
-              {{values.override}}
+         parameters:
+          - name: replicaCount
+            value: 3
          releaseName: nginx
        repoURL: https://github.com/mato2/helm-charts.git
        targetRevision: HEAD
