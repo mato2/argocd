@@ -10,7 +10,7 @@ spec:
        url: https://kubernetes.default.svc
        values:
          override: |
-            replicaCount: 1
+            replicaCount: 2
  template:
    metadata:
      name: '{{cluster}}-nginx-server'
