@@ -15,9 +15,9 @@ spec:
      project: default
      source:
        helm:
-         parameters:
-          - name: replicaCount
-            value: 3
+         values: |
+            replicaCount: 3
+              
          releaseName: nginx
        repoURL: https://github.com/mato2/helm-charts.git
        targetRevision: HEAD
