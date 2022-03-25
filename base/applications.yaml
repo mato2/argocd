@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocds
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/mato2/argocd.git'
+    path: argocd
+    targetRevision: master
+  destination:
+    namespace: argocds
+    name: in-cluster
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
